@@ -34,8 +34,6 @@ TextStyle mTextStyle8(
       Color mFontColor = Colors.black}) {
   return TextStyle(fontSize: 8, fontWeight: mFontWeigh, color: mFontColor);
 }
-
-
 class WhatsApp{
   static final List<Map<String,dynamic>> wData=[{
     'image':'assets/icons/ic_img1.jpg',

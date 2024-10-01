@@ -12,7 +12,8 @@ class CommunitState extends State<CommunitiesPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:MediaQuery.of(context).orientation==Orientation.landscape?AppBar(title: Text("Communities",style: mTextStyle20(),),):
+      AppBar(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
         leadingWidth: 200,
@@ -44,7 +45,83 @@ class CommunitState extends State<CommunitiesPage>{
         width: double.infinity,
         height: double.infinity,
         color: Colors.black,
-        child: Column(
+        child:MediaQuery.of(context).orientation==Orientation.landscape?Row(children: [
+          Expanded(
+            child: Column(
+              children: [
+                /// new community
+                Container(
+                  width: double.infinity,
+                  height:80 ,
+                  color: Colors.white10,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: (){
+            
+                          },
+                          child: ListTile(
+                            leading: CoustomContainer(width: 50.00,height: 50.00,child:Stack(
+                              children: [
+                                Positioned(
+                                  top: 30,
+                                  left: 30,
+                                  child: Container(
+                                    width: 20,
+                                    height: 20,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.green
+                                    ),
+                                    child: Center(child: Icon(Icons.add,size: 10,)),
+                                  ),
+                                ),
+                              ],
+                            ),image:"assets/icons/ic_img2.jpg",),
+                            title: Text("New comminity",style: mTextStyle15(mFontColor: Colors.white),),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Container(
+                  width: double.infinity,
+                  height: 200,
+                  color:Colors.white10,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          leading:CoustomContainer(width: 50.00, height:50.00, child: Container(),image: "assets/icons/ic_img6.jpg",),
+                          title:Text("BCA Alumni",style: mTextStyle15(mFontColor: Colors.white),),
+                        ),
+                      ),
+                      Container(width: double.infinity,
+                        height: 1,
+                        color: Colors.black26,),
+                      ListTile(
+                        leading:CoustomContainer(width: 50.00, height:50.00, child: Container(),image:"assets/icons/ic_announce.png",),
+                        title:Text("Announcements",style: mTextStyle15(mFontColor: Colors.white),),
+                      ),
+                      SizedBox(height: 10,),
+                      ListTile(
+                        leading:CoustomContainer(width: 50.00, height:50.00, child: Container(),image: "assets/icons/ic_announce.png",),
+                        title:Text("Announcements",style: mTextStyle15(mFontColor: Colors.white),),
+                      ),
+                    ],
+                  ),
+                )
+            
+              ],
+            ),
+          ),
+        ],):
+        Column(
           children: [
             /// new community
             Container(

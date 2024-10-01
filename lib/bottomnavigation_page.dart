@@ -26,6 +26,7 @@ class BottomState extends State<BottomnavigationPage>{
     return Scaffold(
       body: naviratList[selectedIndex],
       bottomNavigationBar: NavigationBar(
+
         backgroundColor: Colors.black,
         indicatorColor: Colors.green,
         destinations: [
